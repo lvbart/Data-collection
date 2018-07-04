@@ -1,0 +1,57 @@
+/*====== Dark Layout Style Here ======*/
+body.dark-mode {
+  color: $dark-bg-color;
+  background-image: $dark-layout-bg;
+}
+.dark-mode {
+  background-color: $dark-bg-container;
+  .sidebar-color ,.fixed-plugin .sidebar-overlay{
+    display: none;
+  }
+  .loader-overlay  {
+    background-color: rgba(0,0,0,0.8);
+  }
+  .sidebar-overlay-light {
+    background-color: rgba(0,0,0,0.8);
+  }
+  //main section
+  .rct-header, .rct-footer, .rct-block-footer, .card-footer, .list-group-item, .dropdown-menu, .report-title, .modal-content, input:not(.input-search),
+  select, .rct-filter, .report-status, .button-nav-wrapper button, [role="document"], textarea, .listSection, .sweet-alert, .rct-wysiwyg-editor, .bg-light, .bg-light-yellow, .timeline-Widget,.horizontal-menu,.horizontal-menu .sub-menu,.horizontal-menu .sub-menu-child,.horizontal-menu .sub-menu-sub-child,table thead,
+  .total-earn-chart .default-btn-group button,.quicklink-list li a,.rct-header .quicklink-wrapper .dropdown-menu .quicklink-content .quicklink-list li a:hover,
+  .sidebar-user-block .rct-dropdown .dropdown-menu ul li a{
+    background-color: $dark-bg !important;
+  }
+  .horizontal-menu li:hover >a,.horizontal-menu .sub-menu li:hover >a,.horizontal-menu .sub-menu li .sub-menu-child li:hover >a,.table-hover tbody tr:hover,.quicklink-list,.sidebar-user-block .rct-dropdown .dropdown-menu ul{
+    background-color: rgba(0,0,0,0.2) !important;
+  }
+
+  .chat-box-main, .chat-sidebar, .drawer-wrapper div, .comment-box, .card-base, .rct-session-wrapper .session-inner-wrapper .session-body ,.todo-wrapper .task-box, figure.img-wrapper::after, .plan-info, .btn-light {
+    background: $dark-bg-container;
+  }
+  h1,h2,h3,h4,h5,h6,p, span, a, table, th, td, select, input, .menu-icon, .side-arrow {
+    color: $dark-bg-color !important;
+  }
+  input::placeholder,textarea::placeholder, .form-control , .rct-block * ,.header-title, .humburger, .header-icon, .notification-icon a button, .cart-icon a button, .text-muted, .page-title h2, .active.breadcrumb-item,
+  .text-dark, textarea ,.total-earn-chart .default-btn-group button, .ais-Panel-header {
+    color: $dark-bg-color !important;
+  }
+  .pricing-wrapper, .about-wrapper, .panel-wrapper, .list-wrapper, .menu-paper-wrapper, .popover-wrapper, .date-time-wrapper,
+  .stepper-wrapper, .tabs-wrapper, .textfields-wrapper, .select-wrapper, .re-chart-wrapper, .icons-wrapper, .data-table-wrapper,
+  .redux-table-wrapper, .divider-wrapper, .drawer-wrapper, .feedback-wrapper, .userProfile-wrapper, .avatar-wrapper,  .rct-block  {
+    * {
+      color: $dark-bg-color !important;
+    }
+  }
+  .rct-block, .social-card, .card, .panel, .rct-tabs header, .pricing-box, .chat-bubble.even, .task-detail-top, .btn-light i {
+    background-color: $dark-bg;
+    color: $dark-bg-color;
+    border-color: $dark-border-color;
+  }
+  .quicklink-wrapper .header-icon,.search-icon .search-wrapper .search-input-lg{
+    border-color: $white !important;
+  }
+  .rct-block *, input:not(.input-search), textarea, .modal-header, .modal-footer, .report-status *, .report-status,
+  .rct-mail-wrapper *, .todo-wrapper *, .chat-wrapper *, .dropdown *, .chat-head {
+    border-color: $dark-border-color !important;
+  }
+}

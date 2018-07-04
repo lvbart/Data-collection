@@ -1,0 +1,66 @@
+//--- Font size ---//
+.font-lg {
+  font-size: $font-size-lg;
+}
+.font-md {
+  font-size: ($font-size-sm + 0.125rem);
+}
+.font-sm {
+  font-size: $font-size-sm !important;
+}
+.font-xs {
+  font-size: ($font-size-sm - 0.0625rem) !important;
+}
+.font-2x {
+  font-size: 2rem;
+}
+.font-3x {
+  font-size: 3rem;
+}
+.font-4x {
+  font-size: 4rem !important;
+}
+.font-5x {
+  font-size: 5rem;
+}
+.font-xl {
+  font-size: 2.625rem; //42px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+//Font weight
+.fw-normal {
+  font-weight: normal !important;
+}
+.fw-semi-bold {
+  font-weight: 500 !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+// Font Text
+.text-pink {
+	color: $pink !important;
+}
+.text-indigo {
+	color: $indigo !important;
+}
+.text-teal {
+	color: $teal !important;
+}
+.text-purple {
+	color: $purple !important;
+}
+.text-yellow {
+	color: $orange !important;
+}
+.text-gray {
+  color: $gray-700;
+}
+.text-base {
+  color: #A5A7B2;
+}

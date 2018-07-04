@@ -1,0 +1,25 @@
+/*====== Danger Theme ======*/
+
+body.theme-danger{
+   .text-primary{
+      color:$success !important;
+   }
+   .badge-primary,.bg-primary,.btn-primary,.app-header .rct-header {
+      background-color:$success!important;
+      *{
+         color:$white !important;
+      }
+   }
+   .rct-block-title h4{
+      border-color:$success !important;
+   }
+
+   //Color Switching
+
+   .text-success{
+      color:$primary !important;
+   }
+   .badge-success,.bg-success,.btn-success{
+      background-color:$primary !important;
+   }
+}

@@ -1,0 +1,960 @@
+/*=========== Pages Style ==========*/
+// Gallery Scss
+figure.img-wrapper {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  * {
+    -webkit-box-sizing: padding-box;
+    box-sizing: padding-box;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+  }
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
+  figcaption {
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+  }
+  h2, h4 {
+    margin: 0;
+  }
+  h2 {
+    font-weight: 600;
+  }
+  h4 {
+    text-transform: uppercase;
+  }
+  &:after {
+    background-color: $white;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0;
+  }
+  a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  &:hover figcaption, &.hover figcaption {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 1;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  &:hover:after, &.hover:after {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+    opacity: 0.9;
+  }
+}
+/*======= Pricing Scss =======*/
+.rct-tooltip {
+  width: 250px;
+}
+.pricing-wrapper {
+  button {
+    text-transform: capitalize;
+  }
+  .switch {
+  	vertical-align: middle;
+  	margin: 0 1.25rem; //0 20px;
+  }
+}
+.price-list {
+  margin-bottom: 6.25rem;
+  .rct-block {
+    padding: 3.125rem;
+    p {
+      margin-bottom: 1.25rem; //20px;
+    }
+  }
+}
+.pricing-title {
+  font-size: 1.875rem; //30px;
+  margin-bottom: 1.25rem; //20px
+  text-transform: capitalize;
+}
+.amount-title {
+  font-weight: 900;
+  font-size: 2.25rem; //36px;
+}
+.fixed-pricing {
+  background-color: $block-bg;
+  border-radius: $block-border-radius;
+  box-shadow: $block-shadow;
+  transition: $block-transition;
+	margin-bottom: $block-margin-bottom;
+	position: relative;
+  .pricing-box {
+    @include border(1px solid, $input-border-color, right);
+  }
+}
+.pricing-body, .pricing-head {
+  padding: 1.875rem 3.125rem; //30px 50px;
+}
+.plan-info {
+  background-color: $gray-400;
+  padding: 0.625rem 3.125rem; //10px 50px;
+}
+.plan-info-listing {
+  @extend .price-detail;
+  li {
+    i {
+      margin-right: 0.9375rem;
+    }
+  }
+}
+.price-detail {
+  margin-bottom: 2.188rem; //35px;
+  li {
+    margin-bottom: 0.625rem; //10px;
+    font-size: 0.875rem; //14px;
+  }
+}
+.testimonial-wrapper {
+  .media-body {
+    p {
+      font-style: italic;
+      font-size: 1.125rem; //18px;
+      margin-bottom: 1.25rem; //20px;
+      line-height: 30px;
+    }
+  }
+  .user-meta {
+    span {
+      color: $gray-700;
+    }
+  }
+}
+.faq-wrapper {
+  .card-title {
+    margin-bottom: 1.25rem; //20px
+    font-size: 1rem; //16px;
+  }
+  .card-text {
+    font-size: 0.875rem; //14px;
+    color: $gray-700;
+  }
+}
+.testimonial-slider {
+  .slick-dots {
+    text-align: left;
+    bottom: -50px;
+    left: 185px;
+  }
+}
+/*======== About Scss =========*/
+.section-title::after {
+  content: "";
+  width: 70px;
+  height: 1px;
+  display: inline-block;
+  border: 2px solid $pink;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 6px auto;
+  border-radius: 30px;
+  transition: all .3s ease-in-out 0s;
+}
+.card-content {
+  p {
+    color: $gray-600;
+    text-align: justify;
+  }
+}
+.about-detail {
+  .card-image {
+    img {
+      width: 100%;
+    }
+  }
+}
+/*========== Chat Scss ==========*/
+.chat-wrapper {
+  background: none !important;
+  .media-left {
+    position: relative;
+    .badge-xs {
+      @include border(1px solid, $white, top bottom left right);
+      border-radius: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+      padding: 5px;
+    }
+  }
+}
+.chat-box-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  img {
+    margin-bottom: 0.9375rem;
+  }
+}
+.chat-head {
+  padding: 1.563rem 1.25rem; //25px 20px;
+  .badge {
+    padding: 5px;
+    top: 0;
+  }
+  .menu {
+    a {
+      font-size: 1.5rem; //24px;
+    }
+  }
+}
+.has-wrapper {
+  input [type="search"]::-moz-placeholder {
+    color: $gray-900;
+  }
+  .has-input-right {
+    position: relative;
+  }
+  .has-icon-left {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 1.25rem; //20px;
+  }
+}
+.chat-list {
+  li {
+    @include border(1px solid, $input-border-color, bottom);
+    padding: 0.9375rem 1.25rem; //15px 20px;
+    cursor: pointer;
+    &.item-active {
+      @include border(6px solid, $danger, left);
+    }
+  }
+  .chat-subtitle {
+    padding: 0.9375rem 1.25rem; //15px 20px;
+  }
+}
+.chat-head {
+  @include border(1px solid, $input-border-color, bottom);
+  .attachment {
+    a {
+      font-size: 24px;
+      color: $gray-900;
+    }
+  }
+}
+.chat-body {
+  padding: 1.875rem; //30px;
+  > div {
+    margin-bottom: 0.9375rem;
+  }
+  .chat-bubble {
+    max-width: 600px;
+    padding: 0.625rem; //10px;
+    box-shadow: $block-shadow;
+    &.even {
+      border-radius: 20px 20px 20px 0;
+      background: $block-bg;
+    }
+    &.odd {
+      border-radius: 20px 20px 0px 20px;
+      background: $primary;
+      color: $white;
+      span {
+        color: $white;
+      }
+    }
+    span {
+      display: block;
+      font-size: 12px;
+      color: $gray-600;
+      margin-top: 5px;
+    }
+  }
+}
+.chat-footer {
+  background-color: $block-bg;
+  width: 100%;
+  box-shadow: $block-shadow;
+  input {
+    height: 50px;
+    border: none;
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+.send-icons {
+  ul  {
+    li {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 1.5rem; //24px;
+      a {
+        color: $gray-900;
+      }
+    }
+  }
+}
+/*========== ToDo List Scss =========*/
+#search-todo {
+  border: none;
+  background: $white;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 1px 3px 0 rgba(0,0,0,0.1);
+}
+.todo-listing {
+  .todo-all-list {
+    > li {
+      @include border(1px solid, $input-border-color, bottom);
+      padding: 0.9375rem 1.875rem; //15px 30px;
+    }
+  }
+  .task-head {
+    padding: 0.625rem; //10px;
+    @include border(1px solid, $border-color, bottom);
+  }
+  .task-detail-top {
+    @extend .task-head;
+    background-color: $gray-100;
+    position: relative;
+    .badge-bottom {
+      position: absolute;
+      left: 45px;
+    }
+  }
+  .task-detail-content {
+    padding: 0.9375rem 1.875rem; //15px 30px;
+    @include border(1px solid, $border-color, bottom);
+    .task-labels {
+      padding: 0.625rem; //10px;
+    }
+    .task-box {
+      background-color: $gray-100;
+      position: relative;
+      @include border(1px solid, $input-border-color, top bottom left right);
+      padding: 0.625rem 1.875rem 0.625rem 0.625rem;
+    }
+    .task-btn {
+      background-color: $info;
+      border-radius: 100%;
+      box-shadow: $block-shadow;
+      position: absolute;
+      top: -15px;
+      right: -5px;
+      color: $white;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 1rem;
+    }
+  }
+  .task-comment {
+    padding: 0.9375rem 1.875rem; //15px 30px;
+    ul {
+      li {
+        margin-bottom: 1.563rem; //25px;
+      }
+    }
+  }
+  .task-foot {
+    padding: 0.625rem;
+  }
+}
+.todo-item {
+  cursor: pointer;
+}
+.all-mails-list, .todo-listing {
+  margin: -24px;
+  .media-body {
+    span.badge {
+      margin-right: 0.625rem; //10px;
+      font-weight: normal;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .badge:not(.badge-light):not(.badge-xs) {
+      padding: 5px 15px;
+    }
+  }
+}
+@media (max-width: 959px) and (min-width: 320px) {
+  .todo-wrapper {
+    header {
+      margin-left: 0;
+    }
+  }
+}
+/*======== Calender Scss =======*/
+.calendar-wrapper {
+  .rbc-calendar {
+    display: block;
+  }
+}
+.rbc-month-row {
+  min-height: 150px;
+}
+.rbc-event {
+  background-color: $blue;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid $blue !important;
+}
+.rbc-toolbar button.rbc-active, .rbc-toolbar button:hover {
+  background-color: $blue;
+  color: $white;
+}
+@media (max-width: 700px) and (min-width: 320px) {
+  .rbc-toolbar {
+    font-size: 12px;
+    flex-direction: column;
+    align-items: start;
+    span {
+      margin: 5px 0;
+    }
+  }
+  .rbc-month-row {
+    min-height: 70px;
+  }
+}
+
+/*========== Mail Scss =========*/
+.rct-mail-wrapper, .todo-wrapper, .chat-wrapper {
+  background-color: $block-bg;
+  margin: -$grid-gutter-width;
+  header {
+    background-color: $gray-700 !important;
+  }
+  .top-head {
+    @include border(1px solid, $input-border-color, bottom top);
+    padding: 0.625rem;
+  }
+  .filters {
+    ul {
+      > div {
+        color: $gray-600;
+      }
+    }
+  }
+  .all-mails-list {
+    ul {
+      li {
+        padding: 0.625rem 0.9375rem; //5px 15px;
+        @include border(1px solid, $input-border-color, bottom);
+        cursor: pointer;
+        p, h5 {
+          margin-bottom: 0;
+        }
+        .emails {
+          width: 60%;
+        }
+      }
+    }
+  }
+  .user-detail, .mail-detail  {
+    padding: 1.25rem; //20px;
+    @include border(1px solid, $input-border-color, bottom);
+  }
+}
+.sidebar-title {
+	margin: 0;
+	padding: 0.625rem 0.9375rem; //10px 15px;
+}
+.user-mail {
+  padding: 0.5rem;
+  color: $white;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.27);
+  background-color: $primary;
+}
+.emails {
+  .heading  {
+    color: $gray-900;
+  }
+}
+.compose-email-container {
+  input {
+    border: none;
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .input-group {
+    @include border (1px solid, $border-color, bottom);
+    padding: 0.4rem 0.625rem;
+    .input-group-undefined {
+      min-width: 100px;
+      align-items: center;
+      display: flex;
+    }
+    .input-group-text {
+      background: none;
+      border: none;
+    }
+  }
+  .ql-container {
+    border-bottom: none;
+  }
+  .quill {
+    @include border (1px solid, $border-color, bottom);
+  }
+  .ql-snow .ql-picker-options {
+    background: transparent;
+  }
+}
+/*========= Terms Condition =====*/
+.terms-wrapper {
+	overflow-y: auto;
+	height: 100%;
+}
+.terms-conditions-rules {
+  p {
+    margin-bottom: 1.25rem;
+  }
+  .sub-order {
+    padding-left: 3.75rem; //60px;
+  }
+  ol {
+    padding-left: 2.5rem; //40px;
+    li {
+      margin-bottom: 0.9375rem;
+    }
+  }
+  .heading {
+    font-size: 1.5rem; //24px;
+    margin-bottom: 1.563rem; //25px;
+  }
+  .nest-heading {
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 0.625rem;
+    padding-left: 1.875rem; //30px;
+  }
+  p, ol li, .nest-heading {
+    font-size: 0.875rem;
+  }
+}
+/*========= Feedback ============*/
+.feedback-wrapper {
+  .heading {
+    font-size: 1.5rem; //24px;
+    margin-bottom: 1.563rem; //25px;
+    color: $gray-700;
+  }
+}
+.like-box {
+	@include border(2px solid, $gray-700, top bottom left right);
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	margin-right: 3.25rem;
+  padding: 0.625rem;
+}
+
+.comment-sec {
+  .media {
+    margin-bottom: 1.875rem; //30px;
+  }
+  .comment-box {
+    background-color: $gray-200;
+    padding: 0.625rem;
+    p {
+      font-size: 0.875rem; //14px;
+    }
+  }
+}
+.rct-tabs {
+  header {
+    background-color: $white;
+    box-shadow: none;
+    color: $gray-700;
+    @include border(1px solid, $border-color, bottom);
+    span {
+      font-size: 0.875rem;
+    }
+  }
+  ul {
+    li {
+      margin: 0 -24px !important;
+      padding: 0.9375rem 1.25rem;
+      @include border(1px solid, $border-color, bottom);
+    }
+  }
+  .form-group {
+    .col-form-label {
+      font-size: 1rem;
+    }
+  }
+  [role="tablist"] {
+    button {
+      color: $gray-900;
+    }
+  }
+}
+.social-action {
+  @extend .list-action;
+  a {
+    padding: 5px;
+  }
+}
+.list-action {
+  a, button {
+    color: $gray-700;
+    font-size: 1.125rem; //18px;
+    &:hover {
+      color: $blue;
+    }
+  }
+  a {
+    margin-right: 0.625rem; //10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.feed-content {
+  @include border(3px solid, $primary, left);
+  a {
+    margin-bottom: 0;
+    color: $gray-800;
+    padding: 0.625rem;
+    font-size: 1.125rem; //18px;
+    line-height: 30px;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+.search-filter {
+  padding: 1.25rem; //20px;
+  .form-group {
+    margin-right: 0.9375rem; //15px;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+/*========= Report =============*/
+.check-circle {
+	background-color: $block-bg;
+	border-radius: 100%;
+	border: 1px solid $success;
+	height: 35px;
+	width: 35px;
+	line-height: 35px;
+	text-align: center;
+	margin-right: 1.25rem;
+}
+.report-list {
+  li {
+    @include border(1px solid, $input-border-color, bottom);
+    padding: 1.25rem;
+    &:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: $gray-900;
+      font-size: 2rem; //32px;
+    }
+  }
+}
+.report-status {
+  background-color: $block-bg;
+  @include border(1px solid, $input-border-color, top left bottom right);
+  border-radius: $block-border-radius;
+  > ul {
+    @include border(1px solid, $input-border-color, bottom top);
+    > li {
+      @include border(1px solid, $input-border-color, right);
+      margin: 0 !important;
+      padding: 1.875rem; //30px;
+      &:last-child {
+        border-right: none;
+      }
+      h4 {
+        color: $gray-600;
+      }
+      .title {
+        color: $gray-900;
+      }
+    }
+  }
+}
+.top-filter {
+  .form-group {
+    float: left;
+    margin-right: 0.9375rem;
+  }
+}
+/*========= Faq(s) =============*/
+.faq-page-wrapper {
+  .panel-heading {
+    @extend .rct-block-title;
+    border-bottom: none;
+    > div {
+      margin: 0;
+    }
+    h4 {
+      color: $primary;
+      padding: 0;
+    }
+  }
+}
+/*======== Responsive =========*/
+@media (max-width: 1767px) and (min-width: 320px) {
+  .about-detail {
+    .p-70 {
+      padding: 1.25rem 1.25rem !important;
+    }
+  }
+  .about-content {
+    .title {
+      line-height: 1.2;
+    }
+  }
+}
+
+@media (max-width: 1500px) and (min-width: 320px) {
+  .about-content {
+    .title {
+      font-size: 1.7rem;
+    }
+    .mb-50 {
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 320px) {
+  .pricing-body, .pricing-head {
+    padding: 1.875rem 1.125rem;
+  }
+  .price-list .rct-block {
+    padding: 1.125rem;
+  }
+  .content-wrapper .title {
+    line-height: 1.3;
+  }
+  .media-full {
+    img {
+      width: 200px;
+    }
+  }
+}
+@media (max-width: 1300px) and (min-width: 320px) {
+  .userProfile-wrapper {
+    .profile-top {
+      .profile-content {
+        top: 20px !important;
+        left: 30px !important;
+      }
+    }
+  }
+}
+@media (max-width: 1270px) {
+  .about-content {
+    .title {
+      font-size: 1.375rem; //22px;
+    }
+  }
+}
+@media (max-width: 765px) and (min-width: 320px) {
+  .profile-content {
+    img {
+      width: 90px;
+      height: 90px;
+    }
+    .media-body.pt-25 {
+      padding-top: 5px !important;
+    }
+  }
+}
+@media (max-width: 720px) and (min-width: 320px) {
+  .report-status > ul > li {
+    padding: .8rem;
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}
+@media (max-width: 700px) and (min-width: 320px) {
+  .testimonial-wrapper {
+    &.mb-50 {
+      margin-bottom: 1.875rem;
+    }
+    .media {
+      display: inline-block;
+      text-align: center;
+      img {
+        display: inline-block !important;
+        margin: 0 auto 0.9375rem;
+        margin-right: 0 !important;
+      }
+    }
+  }
+  .feedback-wrapper {
+    .rct-tabs {
+      ul {
+        li {
+          display: inline-block !important;
+          .list-action {
+            text-align: center;
+          }
+        }
+      }
+      .media {
+        display: inline-block;
+        text-align: center;
+        img {
+          margin-right: 0 !important;
+          margin-bottom: 0.9375rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 560px) and (min-width: 320px) {
+  .report-status {
+    > ul {
+      > li {
+        width: 100%;
+        @include border(1px solid, $input-border-color, bottom);
+        border-right: none;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 575px) and (min-width: 320px) {
+  .report-status {
+    .top-filter {
+      .w-20 {
+        width: 35% !important;
+      }
+    }
+  }
+  .feedback-wrapper {
+    .comment-sec, form {
+      width: 100% !important;
+    }
+    .ml-70 {
+      margin-left: 0 !important;
+    }
+  }
+  .like-box {
+    width: 40px;
+    height: 40px;
+    margin: 1.25rem 1.25rem 1.25rem 0;
+    h2, span {
+      display: none;
+    }
+  }
+  .comment-sec {
+    .media, .media > div {
+      display: inline-block;
+      text-align: center;
+      img {
+        margin-bottom: 0.9375rem;
+      }
+    }
+  }
+  .search-filter {
+    .w-40 {
+      width: 50% !important;
+    }
+  }
+  .userProfile-wrapper {
+    .w-50, .w-75 {
+      width: 100% !important;
+    }
+  }
+  .profile-content {
+    img {
+      width: 70px;
+      height: 70px;
+    }
+    .media-body {
+      h2 {
+        font-size: 1.275rem;
+      }
+    }
+  }
+  .all-mails-list {
+    .small.text-muted {
+      display: none;
+    }
+    .emails {
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 500px) and (min-width: 320px) {
+  .userProfile-wrapper {
+    .profile-top {
+      .profile-content {
+        top: 10px !important;
+      }
+    }
+    .messages-wrapper {
+      ul {
+        li {
+          &:not(:first-child) {
+            display: inline-block !important;
+          }
+          span, button {
+            margin-bottom: 10px !important;
+          }
+        }
+      }
+      .toolbar {
+        label, button {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 415px) and (min-width: 320px) {
+  .report-status {
+    .top-filter {
+      .w-20 {
+        width: 100% !important;
+      }
+    }
+  }
+  .profile-content {
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

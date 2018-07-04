@@ -1,0 +1,110 @@
+/*======= Mini Sidebar Style Here =====*/
+.mini-sidebar {
+  .sidebar-user-block, .humburger {
+    display: none;
+  }
+  .side-title {
+    display: none;
+  }
+  .app-conrainer-wrapper {
+    left:$mini-sidebar-width !important;
+  }
+  .rct-sidebar {
+    width: $mini-sidebar-width;
+    -webkit-transition-property: top,bottom,width;
+    transition-property: top,bottom, width;
+    -webkit-transition-duration: .2s,.2s, .35s;
+    transition-duration: .2s,.2s, .35s;
+    -webkit-transition-timing-function: linear,linear,ease;
+    transition-timing-function: linear,linear,ease;
+    -webkit-overflow-scrolling: touch;
+    .site-logo {
+      .logo-normal {
+        opacity: 0;
+        -webkit-transform: translate3d(-25px, 0, 0);
+        -ms-transform: translate3d(-25px, 0, 0);
+        transform: translate3d(-25px, 0, 0)
+      }
+    }
+    &:hover {
+      .logo-normal {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .sub-menu {
+        display: block;
+      }
+    }
+    .rct-mainMenu {
+      > li {
+        .menu-icon {
+          float: left;
+          text-align: center;
+        }
+        > a {
+          .menu-icon {
+            @extend .menu-icon;
+          }
+        }
+        > a .menu {
+          left: 35px;
+        }
+        .menu {
+          left: 60px;
+        }
+        .side-arrow {
+          right: 25px;
+        }
+        .menu, > a .menu  {
+          opacity: 0;
+          transition: all 0.4s linear 0s;
+          position: absolute;
+          -webkit-transform: translate3d(-25px, 0, 0);
+          -ms-transform: translate3d(-25px, 0, 0);
+          transform: translate3d(-25px, 0, 0)
+        }
+        .side-arrow{
+          opacity: 0;
+          position: absolute;
+        }
+      }
+    }
+    .sub-menu {
+      display: none;
+    }
+    &:hover {
+      width: $sidebar-width;
+      .rct-mainMenu, .sub-menu {
+        > li {
+          .menu, > a .menu, a {
+            transform: translateZ(0);
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+          }
+          .side-arrow{
+            opacity:1;
+          }
+        }
+      }
+    }
+  }
+  .sub-menu {
+    > li {
+      > a {
+        position: relative;
+        opacity: 0;
+        transition: all 0.4s linear 0s;
+        -webkit-transform: translate3d(-25px, 0, 0);
+        -ms-transform: translate3d(-25px, 0, 0);
+        transform: translate3d(-25px, 0, 0)
+      }
+    }
+  }
+  .rct-header {
+    left: $mini-sidebar-width;
+  }
+}

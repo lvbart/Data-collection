@@ -1,0 +1,46 @@
+/*=========== Background Utilities ==========*/
+.gradient-primary {
+	@include linearGradient($light-primary, $primary);
+	* {
+		color: $white;
+	}
+}
+.gradient-blue {
+	@include linearGradient($light-blue, $blue);
+	* {
+		color: $white;
+	}
+}
+.gradient-info {
+	@include linearGradient($light-info, $info);
+	* {
+		color: $white;
+	}
+}
+.gradient-success {
+	@include linearGradient($light-success, $success);
+	* {
+		color: $white;
+	}
+}
+.gradient-danger {
+	@include linearGradient($light-danger, $danger);
+	* {
+		color: $white;
+	}
+}
+.gradient-warning {
+	@include linearGradient($light-warning, $warning);
+	* {
+		color: $white;
+	}
+}
+.gradient-purple {
+	@include linearGradient($light-purple, $purple);
+	* {
+		color: $white;
+	}
+}
+.bg-light {
+	background-color: $gray-200 !important;
+}
