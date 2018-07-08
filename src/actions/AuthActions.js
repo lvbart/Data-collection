@@ -24,7 +24,7 @@ export const signinUserInFirebase = (user, history) => (dispatch) => {
         .then((user) => {
             localStorage.setItem("user_id", "user-id");
             dispatch({ type: LOGIN_USER_SUCCESS, payload: localStorage.getItem('user_id') });
-            history.push('/');
+            history.push('/app/input-list');
             NotificationManager.success('User Login Successfully!');
         })
         .catch((error) => {
@@ -57,7 +57,7 @@ export const signupUserInFirebase = (user, history) => (dispatch) => {
         .then((success) => {
             localStorage.setItem("user_id", "user-id");
             dispatch({ type: SIGNUP_USER_SUCCESS, payload: localStorage.getItem('user_id') });
-            history.push('/');
+            history.push('/app/input-list');
             NotificationManager.success('Account Created Successfully!');
         })
         .catch((error) => {
