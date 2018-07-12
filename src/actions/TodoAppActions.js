@@ -1,9 +1,10 @@
 /**
  * Todo App Actions
  */
-import api from 'Api';
 import {
     GET_TODOS,
+    GET_TODOS_SUCCESS,
+    GET_TODOS_FAILURE,
     FETCH_TODOS,
     ADD_NEW_TASK,
     GET_FILTER_TODOS,
@@ -32,20 +33,30 @@ import {
     ON_LABEL_MENU_ITEM_SELECT,
     UPDATE_SEARCH,
     SEARCH_TODO
-} from 'Actions/types';
+} from './types';
 
 /**
  * Redux Action Get Todos
  */
-export const getTodos = () => (dispatch) => {
-    api.get('todosForApp.js')
-        .then((response) => {
-            dispatch({ type: GET_TODOS, payload: response.data });
-        })
-        .catch(errors => {
-            // error handling
-        })
-}
+export const getTodos = () => ({
+    type: GET_TODOS
+});
+
+/**
+ * Redux Action Get Todos Success
+ */
+export const getTodosSuccess = (response) => ({
+    type: GET_TODOS_SUCCESS,
+    payload: response.data
+});
+
+/**
+ * Redux Action Get Todos Failure
+ */
+export const getTodosFailure = (error) => ({
+    type: GET_TODOS_FAILURE,
+    payload: error
+});
 
 /**
  * Redux Action To Fetch To Todos

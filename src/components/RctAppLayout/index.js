@@ -34,7 +34,7 @@ class MainApp extends Component {
         loadingSidebar: true
     }
 
-    UNSAFE_componentWillMount() {
+    componentWillMount() {
         this.updateDimensions();
     }
 
@@ -55,7 +55,7 @@ class MainApp extends Component {
         window.removeEventListener("resize", this.updateDimensions);
     }
 
-    UNSAFE_componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps(nextProps) {
         const { windowWidth } = this.state;
         if (nextProps.location !== this.props.location) {
             if (windowWidth <= 1199) {
@@ -130,25 +130,28 @@ class MainApp extends Component {
         return (
             <div className="app">
                 <div className="app-main-container">
-                  {/* <Tour /> */}
-                  <Sidebar
-                    // sidebar={this.renderSidebar()}
-                    open={windowWidth <= 1199 ? navCollapsed : false}
-                    docked={windowWidth > 1199 ? !navCollapsed : false}
-                    pullRight={rtlLayout}
-                    onSetOpen={() => this.props.collapsedSidebarAction(false)}
-                    styles={{ content: { overflowY: '' } }}
-                    contentClassName={classnames({ 'app-conrainer-wrapper': miniSidebar })}
-                  >
-                      <div className="app-container">
-                          <div className="rct-app-content">
-                              <div className="rct-page">
-                                  {this.renderPage()}
-                              </div>
-                          </div>
-                      </div>
-                  </Sidebar>
-                  <ThemeOptions />
+                    <Tour />
+                    <Sidebar
+                        // sidebar={this.renderSidebar()}
+                        open={windowWidth <= 1199 ? navCollapsed : false}
+                        docked={windowWidth > 1199 ? !navCollapsed : false}
+                        pullRight={rtlLayout}
+                        onSetOpen={() => this.props.collapsedSidebarAction(false)}
+                        styles={{ content: { overflowY: '' } }}
+                        contentClassName={classnames({ 'app-conrainer-wrapper': miniSidebar })}
+                    >
+                        <div className="app-container">
+                            <div className="rct-app-content">
+                                {/* <div className="app-header">
+                                    {this.renderHeader()}
+                                </div> */}
+                                <div className="rct-page">
+                                    {this.renderPage()}
+                                </div>
+                            </div>
+                        </div>
+                    </Sidebar>
+                    <ThemeOptions />
                 </div>
             </div>
         );

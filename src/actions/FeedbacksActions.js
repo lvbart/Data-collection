@@ -1,10 +1,10 @@
 /**
  * Feedback Actions
  */
-import api from 'Api';
 import {
     GET_FEEDBACKS,
     GET_FEEDBACKS_SUCCESS,
+    GET_FEEDBACKS_FAILURE,
     GET_ALL_FEEDBACKS,
     ON_CHANGE_FEEDBACK_PAGE_TABS,
     MAKE_FAVORITE_FEEDBACK,
@@ -18,21 +18,30 @@ import {
     UPDATE_SEARCH_IDEA,
     ON_SEARCH_IDEA,
     ON_COMMENT_FEEDBACK
-} from 'Actions/types';
+} from './types';
 
 /**
  * Redux Action To Get Feedbacks
  */
-export const getFeedbacks = () => (dispatch) => {
-    dispatch({ type: GET_FEEDBACKS });
-    api.get('feedbacks.js')
-        .then((response) => {
-            dispatch({ type: GET_FEEDBACKS_SUCCESS, payload: response.data });
-        })
-        .catch(error => {
-            // error handling
-        })
-}
+export const getFeedbacks = () => ({
+    type: GET_FEEDBACKS
+});
+
+/**
+ * Redux Action To Get Feedbacks Success
+ */
+export const getFeedbacksSuccess = (response) => ({
+    type: GET_FEEDBACKS_SUCCESS,
+    payload: response.data
+});
+
+/**
+ * Redux Action To Get Feedbacks Failure
+ */
+export const getFeedbacksFailure = (error) => ({
+    type: GET_FEEDBACKS_FAILURE,
+    payload: error
+});
 
 /**
  * Redux Action To Get All Feedbacks

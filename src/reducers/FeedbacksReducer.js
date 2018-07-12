@@ -20,7 +20,8 @@ import {
     SEND_REPLY,
     UPDATE_SEARCH_IDEA,
     ON_SEARCH_IDEA,
-    ON_COMMENT_FEEDBACK
+    ON_COMMENT_FEEDBACK,
+    GET_FEEDBACKS_FAILURE
 } from 'Actions/types';
 
 /**
@@ -53,6 +54,15 @@ export default (state = INIT_STATE, action) => {
                 plannedFeedbacksCount: action.payload.filter(feedback => feedback.planned).length,
                 progressFeedbacksCount: action.payload.filter(feedback => feedback.inProgress).length
             };
+
+        // get feedbacks failure
+        case GET_FEEDBACKS_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                allFeedbacks: null,
+                feedbacks: null
+            }
 
         // show loading indicator
         case SHOW_FEEDBACK_LOADING_INDICATOR:

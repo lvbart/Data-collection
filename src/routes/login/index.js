@@ -27,7 +27,7 @@ import {
   signinUserWithTwitter
 } from 'Actions';
 
-class InputList extends Component {
+class Signin extends Component {
 
   state = {
     area: 'China',
@@ -39,7 +39,7 @@ class InputList extends Component {
    */
   onUserLogin() {
     if (this.state.area !== '' && this.state.office !== '') {
-      // this.props.signinUserInFirebase(this.state, this.props.history);
+      this.props.signinUserInFirebase(this.state, this.props.history);
     }
   }
 
@@ -69,14 +69,6 @@ class InputList extends Component {
                     </div>
                     <Form>
                       <FormGroup>
-                        <InputGroup className="has-wrapper">
-                          <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
-                          <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                        </InputGroup>
-                        <InputGroup className="has-wrapper">
-                          <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
-                          <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                        </InputGroup>
                         <InputGroup className="has-wrapper">
                           <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
                           <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
@@ -116,4 +108,4 @@ export default connect(mapStateToProps, {
   signinUserWithGoogle,
   signinUserWithGithub,
   signinUserWithTwitter
-})(InputList);
+})(Signin);

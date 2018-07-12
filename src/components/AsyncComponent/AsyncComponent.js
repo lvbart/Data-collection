@@ -276,7 +276,7 @@ const AsyncCustomComponent = Loadable({
 
 // Session Login
 const AsyncSessionLoginComponent = Loadable({
-	loader: () => import("Routes/session/login"),
+	loader: () => import("Routes/login"),
 	loading: () => <RctPageLoader />,
 });
 

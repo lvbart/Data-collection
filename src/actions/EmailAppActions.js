@@ -1,7 +1,6 @@
 /**
  * Email App Actions
  */
-import api from 'Api';
 import {
     GET_EMAILS,
     GET_EMAIL_SUCCESS,
@@ -27,21 +26,30 @@ import {
     EMAIL_SENT_SUCCESSFULLY,
     FILTER_EMAILS_WITH_LABELS,
     ADD_LABELS_INTO_EMAILS
-} from 'Actions/types';
+} from './types';
 
 /**
  * Redux Action Get Emails
  */
-export const getEmails = () => (dispatch) => {
-    dispatch({ type: GET_EMAILS });
-    api.get('emails.js')
-        .then((response) => {
-            dispatch({ type: GET_EMAIL_SUCCESS, payload: response.data });
-        })
-        .catch(error => {
-            dispatch({ type: GET_EMAIL_FAILURE });
-        })
-}
+export const getEmails = () => ({
+    type: GET_EMAILS
+});
+
+/**
+ * Redux Action Get Emails Success
+ */
+export const getEmailsSuccess = (response) => ({
+    type: GET_EMAIL_SUCCESS,
+    payload: response.data
+})
+
+/**
+ * Redux Action Get Emails Failure
+ */
+export const getEmailsFailure = (error) => ({
+    type: GET_EMAIL_FAILURE,
+    payload: error
+})
 
 /**
  * Redux Action To Mark As Star Email

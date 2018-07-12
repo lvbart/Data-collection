@@ -16,8 +16,8 @@ import HorizontalLayout from './HorizontalLayout';
 import MainApp from 'Routes';
 
 // app signin
-import AppSignIn from './SigninFirebase';
-import AppSignUp from './SignupFirebase';
+import AppSignIn from '../routes/login';
+import InputList from '../routes/input-list';
 
 // async components
 import {
@@ -66,11 +66,11 @@ class App extends Component {
 	render() {
 		const { location, match, user } = this.props;
 		if (location.pathname === '/') {
-			if (user === null) {
+			// if (user === null) {
+			// 	return (<Redirect to={'/signin'} />);
+			// } else {
 				return (<Redirect to={'/signin'} />);
-			} else {
-				return (<Redirect to={`${match.url}app/input-list`} />);
-			}
+			// }
 		}
 		return (
 			<RctThemeProvider>
@@ -82,9 +82,7 @@ class App extends Component {
 				/>
 				<Route path="/horizontal" component={HorizontalLayout} />
 				<Route path="/signin" component={AppSignIn} />
-				<Route path="/signup" component={AppSignUp} />
-				<Route path="/session/login" component={AsyncSessionLoginComponent} />
-				<Route path="/session/register" component={AsyncSessionRegisterComponent} />
+				<Route path="/input-list" component={InputList} />
 				<Route path="/session/lock-screen" component={AsyncSessionLockScreenComponent} />
 				<Route
 					path="/session/forgot-password"

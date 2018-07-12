@@ -4,7 +4,7 @@
 const AppConfig = {
     appLogo: require('Assets/img/site-logo.png'),          // App Logo
     appUrl: 'http://reactify.theironnetwork.org',             // App Url
-    brandName: 'Data Collection',                                    // Brand Name
+    brandName: 'Reactify',                                    // Brand Name
     navCollapsed: false,                                      // Sidebar collapse
     darkMode: false,                                          // Dark Mode
     boxLayout: false,                                         // Box Layout

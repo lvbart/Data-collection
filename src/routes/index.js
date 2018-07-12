@@ -24,7 +24,6 @@ import DragAndDrop from './drag-drop';
 import Editor from './editor';
 import Ecommerce from './ecommerce';
 import Dashboard from './dashboard';
-import ResponsiveTable from './input-list';
 
 // async component
 import {
@@ -39,7 +38,6 @@ class MainApp extends Component {
 		const { match } = this.props;
 		return (
 			<RctAppLayout>
-        <Route path={`${match.url}/input-list`} component={ResponsiveTable} />
 				<Route path={`${match.url}/dashboard`} component={Dashboard} />
 				<Route path={`${match.url}/widgets`} component={Widgets} />
 				<Route path={`${match.url}/ecommerce`} component={Ecommerce} />
