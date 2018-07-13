@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { Link } from 'react-router-dom';
-import { Form, FormGroup, Input, InputGroup } from 'reactstrap';
+import { Form, FormGroup, Input, InputGroup, Label, Col, Row } from 'reactstrap';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import QueueAnim from 'rc-queue-anim';
 
@@ -31,7 +31,7 @@ class InputList extends Component {
 
   state = {
     area: 'China',
-    office: 'test#'
+    office: 2
   }
 
   /**
@@ -62,34 +62,34 @@ class InputList extends Component {
           <div className="session-inner-wrapper">
             <div className="container">
               <div className="row row-eq-height">
-                <div className="col-sm-7 col-md-7 col-lg-8">
-                  <div className="session-body text-center">
-                    <div className="session-head mb-30">
-                      <h2 className="font-weight-bold">Sign In</h2>
-                    </div>
+                <div className="col-sm-7 col-md-7 col-lg-7">
+                  <div className="session-body text-right">
                     <Form>
                       <FormGroup>
-                        <InputGroup className="has-wrapper">
-                          <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
-                          <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                        </InputGroup>
-                        <InputGroup className="has-wrapper">
-                          <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
-                          <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                        </InputGroup>
-                        <InputGroup className="has-wrapper">
-                          <Input type="text" value={area} name="user-mail" id="user-mail" className="has-input input-lg" placeholder="Area" onChange={(event) => this.setState({ area: event.target.value })} />
-                          <Input type="text" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                        </InputGroup>
+                        {[1,2,3].map(item => <InputGroup className="has-wrapper-input">
+                          <Label md className="has-label text-center">{'March'}</Label>
+                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg text-center" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
+                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
+                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
+                        </InputGroup>)}
                       </FormGroup>
-                      <FormGroup className="mb-15">
+                      <FormGroup row className="mb-15">
                         <Button
                           color="primary"
                           className="btn-block text-white"
                           variant="raised"
                           size="large"
                           onClick={() => this.onUserLogin()}>
-                          Next Step
+                          Prev Page
+                        </Button>
+                        <Col/>
+                        <Button
+                          color="primary"
+                          className="btn-block text-white"
+                          variant="raised"
+                          size="large"
+                          onClick={() => this.onUserLogin()}>
+                          Next Page
                         </Button>
                       </FormGroup>
                     </Form>

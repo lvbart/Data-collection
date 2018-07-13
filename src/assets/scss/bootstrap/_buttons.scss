@@ -125,11 +125,11 @@ fieldset:disabled a.btn {
 
 .btn-block {
   display: block;
-  width: 15%;
+  width: 30%;
 
   // Vertically space out multiple block buttons
   + .btn-block {
-    margin-top: $btn-block-spacing-y;
+    margin-left: 2%;
   }
 }
 

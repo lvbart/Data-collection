@@ -99,8 +99,20 @@
   }
   .has-wrapper {
     .has-input {
+      @include border(0px solid, $input-border-color, top bottom left right);
+      margin: 10px;
+    }
+  }
+  .has-wrapper-input {
+    align-items: center;
+    .has-input {
       @include border(1px solid, $input-border-color, top bottom left right);
       margin: 10px;
+    }
+    .has-label {
+      margin: 10px;
+      margin-left: 15%;
+      margin-right: 15%;
     }
   }
 }
@@ -156,7 +168,6 @@
         padding: 2rem 1.875rem;
         [class*="btn-"]:not(.btn-success) {
           height: 0px !important;
-          width: 35px;
           font-size: 1rem;
           margin-bottom: 5px !important;
         }
