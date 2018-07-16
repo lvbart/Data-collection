@@ -1,0 +1,26 @@
+// chat app users
+export default [
+  'Tax refund',
+  'Flight diver',
+  'Crew salary',
+  'Rent',
+  'Entertain',
+  'Insurance',
+  'Tax',
+  'Utility',
+  'BSP/CASS',
+  'Lawyer/Accountant',
+  'System Maintenance',
+  'Repair',
+  'Repair-car',
+  'Repair-device',
+  'Repair-house',
+  'Travel',
+  'Telecomunication',
+  'Office Supplies',
+  'Transpotation',
+  'Energy',
+  'Other',
+  'Low cost',
+  'Service Outsourcing'
+]

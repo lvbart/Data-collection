@@ -11,6 +11,7 @@ import {
 } from '../firebase';
 import {
     LOGIN_USER,
+    CHANGE_PAGE_HISTORY,
     LOGIN_FACEBOOK_USER,
     LOGIN_GOOGLE_USER,
     LOGIN_TWITTER_USER,
@@ -25,7 +26,9 @@ import {
     signUpUserInFirebaseSuccess,
     signUpUserInFirebaseFailure,
     logoutUserFromFirebaseSuccess,
-    logoutUserFromFirebaseFailure
+    logoutUserFromFirebaseFailure,
+    changeListState,
+    changeCurrentPage
 } from 'Actions';
 
 /**
@@ -102,6 +105,28 @@ function* signInUserWithEmailPassword({ payload }) {
     } catch (error) {
         yield put(signinUserFailure(error));
     }
+}
+
+/**
+ * Signin User With Email & Password
+ */
+function* changeToNextPage({ payload }) {
+  const { current_page, history, item_state } = payload;
+  try {
+      // const signInUser = yield call(signInUserWithEmailPasswordRequest, area, office);
+      // if (signInUser.message) {
+      //     yield put(signinUserFailure(signInUser.message));
+      // } else {
+      //     localStorage.setItem('user_id', signInUser.uid);
+      //     yield put(signinUserSuccess(signInUser));
+      //     history.push('/');
+      // }
+      yield put(changeCurrentPage(current_page));
+      yield put(changeListState(item_state));
+      history.push('/input-list');
+  } catch (error) {
+      yield put(signinUserFailure(error));
+  }
 }
 
 /**
@@ -214,6 +239,7 @@ function* createUserWithEmailPassword({ payload }) {
  */
 export function* signinUserInFirebase() {
     yield takeEvery(LOGIN_USER, signInUserWithEmailPassword);
+    yield takeEvery(CHANGE_PAGE_HISTORY, changeToNextPage);
 }
 
 /**

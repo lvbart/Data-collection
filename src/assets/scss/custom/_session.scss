@@ -9,9 +9,9 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  padding-top: 10%;
   .session-inner-wrapper {
     transform: translate3d(0%, 10%, 0);
+    padding-top: 10%;
     padding-bottom: 1.875rem;
   }
 }
@@ -113,6 +113,7 @@
       margin: 10px;
       margin-left: 15%;
       margin-right: 15%;
+      width: 20%;
     }
   }
 }

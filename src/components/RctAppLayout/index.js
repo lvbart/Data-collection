@@ -103,7 +103,7 @@ class MainApp extends Component {
     renderHeader() {
         const { loadingHeader } = this.state;
         if (loadingHeader) {
-            return <PreloadHeader />;
+            // return <PreloadHeader />;
         }
         return <Header />
     }

@@ -15,7 +15,10 @@ import {
     LOGIN_GOOGLE_USER,
     LOGIN_TWITTER_USER,
     LOGIN_GITHUB_USER,
-    LOGOUT_USER_FAILURE
+    LOGOUT_USER_FAILURE,
+    CHANGE_LIST_STATE,
+    CHANGE_CURRENT_PAGE,
+    CHANGE_PAGE_HISTORY
 } from './types';
 
 /**
@@ -24,6 +27,21 @@ import {
 export const signinUserInFirebase = (user, history) => ({
     type: LOGIN_USER,
     payload: { user, history }
+});
+
+export const changeListState = (item_state) => ({
+    type: CHANGE_LIST_STATE,
+    payload: item_state
+});
+
+export const changeCurrentPage = (current_page) => ({
+  type: CHANGE_CURRENT_PAGE,
+  payload: current_page
+});
+
+export const changePageHistory = (item_state, current_page, history) => ({
+    type: CHANGE_PAGE_HISTORY,
+    payload: { item_state, current_page, history }
 });
 
 /**

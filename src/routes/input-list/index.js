@@ -24,35 +24,49 @@ import {
   signinUserWithFacebook,
   signinUserWithGoogle,
   signinUserWithGithub,
-  signinUserWithTwitter
+  signinUserWithTwitter,
+  changePageHistory
 } from 'Actions';
+
+import item_list from '../../assets/data/chat-app/item-list';
 
 class InputList extends Component {
 
-  state = {
-    area: 'China',
-    office: 2
+  constructor(props) {
+		super(props);
+		this.state = {
+      itemState: this.props.item_state,
+      currentPage: this.props.current_page,
+      user: this.props.user
+		}
+	};
+
+  componentWillMount() {
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      itemState: newProps.item_state,
+      currentPage: newProps.current_page
+    });
   }
 
   /**
    * On User Login
    */
-  onUserLogin() {
-    if (this.state.area !== '' && this.state.office !== '') {
-      // this.props.signinUserInFirebase(this.state, this.props.history);
-    }
+  changeValue(index, value) {
+    const tempListData = [...this.state.itemState];
+    tempListData[index] = value;
+    this.setState({ itemState: tempListData });
   }
 
-  /**
-   * On User Sign Up
-   */
-  onUserSignUp() {
-    this.props.history.push('/signup');
+  goToPage(pageNum) {
+    this.props.changePageHistory(this.state.itemState, pageNum, this.props.history);
   }
 
   render() {
-    const { area, office } = this.state;
     const { loading } = this.props;
+    const { itemState, currentPage } = this.state;
     return (
       <QueueAnim type="bottom" duration={2000}>
         <div className="rct-session-wrapper">
@@ -66,31 +80,39 @@ class InputList extends Component {
                   <div className="session-body text-right">
                     <Form>
                       <FormGroup>
-                        {[1,2,3].map(item => <InputGroup className="has-wrapper-input">
-                          <Label md className="has-label text-center">{'March'}</Label>
-                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg text-center" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
-                          <Input type="number" value={office} name="user-mail1" id="user-mail1" className="has-input input-lg" placeholder="Office" onChange={(event) => this.setState({ office: event.target.value })} />
+                        {itemState.slice(currentPage * 3, currentPage * 3 + 3).map((item, index) => <InputGroup key={index} className="has-wrapper-input">
+                          <Label className="has-label text-center">{item_list[index + currentPage * 3]}</Label>
+                          <Input type="number" value={itemState[index + currentPage * 3]} name="user-data1" id="user-data1" className="has-input input-lg text-center" placeholder="0" onChange={(event) => { this.changeValue(index + currentPage * 3, event.target.value); }} />
+                          <Input type="number" value={itemState[index + currentPage * 3]} name="user-data2" id="user-data2" className="has-input input-lg text-center" placeholder="0" onChange={(event) => { this.changeValue(index + currentPage * 3, event.target.value); }} />
+                          <Input type="number" value={itemState[index + currentPage * 3]} name="user-data3" id="user-data3" className="has-input input-lg text-center" placeholder="0" onChange={(event) => { this.changeValue(index + currentPage * 3, event.target.value); }} />
                         </InputGroup>)}
                       </FormGroup>
                       <FormGroup row className="mb-15">
-                        <Button
+                        {currentPage !== 0 && <Button
                           color="primary"
                           className="btn-block text-white"
                           variant="raised"
                           size="large"
-                          onClick={() => this.onUserLogin()}>
+                          onClick={() => this.goToPage(currentPage - 1)}>
                           Prev Page
-                        </Button>
+                        </Button>}
                         <Col/>
-                        <Button
+                        {currentPage !== 7 && <Button
                           color="primary"
                           className="btn-block text-white"
                           variant="raised"
                           size="large"
-                          onClick={() => this.onUserLogin()}>
+                          onClick={() => this.goToPage(currentPage + 1)}>
                           Next Page
-                        </Button>
+                        </Button>}
+                        {currentPage === 7 && <Button
+                          color="primary"
+                          className="btn-block text-white"
+                          variant="raised"
+                          size="large"
+                          onClick={() => this.goToPage(currentPage - 1)}>
+                          Submit
+                        </Button>}
                       </FormGroup>
                     </Form>
                   </div>
@@ -106,8 +128,8 @@ class InputList extends Component {
 
 // map state to props
 const mapStateToProps = ({ authUser }) => {
-  const { user, loading } = authUser;
-  return { user, loading }
+  const { user, loading, item_state, current_page } = authUser;
+  return { user, loading, item_state, current_page }
 }
 
 export default connect(mapStateToProps, {
@@ -115,5 +137,6 @@ export default connect(mapStateToProps, {
   signinUserWithFacebook,
   signinUserWithGoogle,
   signinUserWithGithub,
-  signinUserWithTwitter
+  signinUserWithTwitter,
+  changePageHistory
 })(InputList);
